@@ -141,7 +141,10 @@ We now construct an injection from $\{0,1\}^{\mathbb{N}}$ into $\mathbb{R}$ usin
 
 For each sequence $(a_1, a_2, a_3, \ldots) \in \\{0,1\\}^{\mathbb{N}}$, define
 
-$$\psi\big((a_n)_{n=1}^{\infty}\big) = \sum_{n=1}^{\infty} \frac{2a_n}{3^n}$$
+$$
+\psi\big((a_n)_{n=1}^{\infty}\big)
+= \sum_{n=1}^{\infty} \frac{2a_n}{3^n}
+$$
 
 **Claim 3.** $\psi$ maps into $[0,1] \subset \mathbb{R}$.
 
