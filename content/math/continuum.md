@@ -5,56 +5,56 @@ title = 'The Cardinality of the Continuum Equals the Cardinality of the Power Se
 math = true
 +++
 
-We prove that the cardinality of the real numbers equals $2^{\aleph_0}$, the cardinality of the power set of the natural numbers. This proof uses only standard results from set theory and analysis.
+We prove rigorously that the cardinality of the real numbers equals $2^{\aleph_0}$, the cardinality of the power set of the natural numbers. This proof uses only standard results from set theory and analysis.
 
 ## Preliminary Definitions and Results
 
 **Definition 1 (Cardinality).** Two sets $A$ and $B$ have the same *cardinality*, written $|A| = |B|$, if there exists a bijection $f: A \to B$.
 
-**Definition 2 (Cardinal Inequality).** We write $|A| \leq |B|$ if there exists an injection from $A$ to $B$.
+**Definition 2 (Cardinal Inequality).** We write $\|A\| \leq \|B\|$ if there exists an injection from $A$ to $B$.
 
-**Theorem 1 (Cantor-Schröder-Bernstein).** If $|A| \leq |B|$ and $|B| \leq |A|$, then $|A| = |B|$.
+**Theorem 1 (Cantor-Schröder-Bernstein).** If $\|A\| \leq \|B\|$ and $\|B\| \leq \|A\|$, then $\|A\| = \|B\|$.
 
 **Definition 3 (Notation).** Throughout this proof, we use the following notation:
-- $\mathbb{N} = \{0, 1, 2, 3, \ldots\}$ denotes the natural numbers
-- $\aleph_0 = |\mathbb{N}|$ denotes the cardinality of the natural numbers
+- $\mathbb{N} = \\{0, 1, 2, 3, \ldots\\}$ denotes the natural numbers
+- $\aleph_0 = \|\mathbb{N}\|$ denotes the cardinality of the natural numbers
 - $\mathcal{P}(\mathbb{N})$ denotes the power set of $\mathbb{N}$
-- $2^{\aleph_0} = |\mathcal{P}(\mathbb{N})|$
-- $\{0,1\}^{\mathbb{N}}$ denotes the set of all functions from $\mathbb{N}$ to $\{0,1\}$
+- $2^{\aleph_0} = \|\mathcal{P}(\mathbb{N})\|$
+- $\\{0,1\\}^{\mathbb{N}}$ denotes the set of all functions from $\mathbb{N}$ to $\\{0,1\\}$
 - $\mathbb{R}$ denotes the real numbers
 
-**Remark.** The set $\mathcal{P}(\mathbb{N})$ can be identified with $\{0,1\}^{\mathbb{N}}$ via characteristic functions. Specifically, for any $S \subseteq \mathbb{N}$, its characteristic function $\chi_S: \mathbb{N} \to \{0,1\}$ is defined by
+**Remark.** The set $\mathcal{P}(\mathbb{N})$ can be identified with $\\{0,1\\}^{\mathbb{N}}$ via characteristic functions. Specifically, for any $S \subseteq \mathbb{N}$, its characteristic function $\chi_S: \mathbb{N} \to \\{0,1\\}$ is defined by
 
-$$\chi_S(n) = \begin{cases}
+$\chi_S(n) = \begin{cases}
 1 & \text{if } n \in S\\
 0 & \text{if } n \notin S
-\end{cases}$$
+\end{cases}$
 
-This correspondence is a bijection, so $|\mathcal{P}(\mathbb{N})| = |\{0,1\}^{\mathbb{N}}|$.
+This correspondence is a bijection, so $\|\mathcal{P}(\mathbb{N})\| = \|\\{0,1\\}^{\mathbb{N}}\|$.
 
 ## Proof Strategy
 
-We will prove $|\mathbb{R}| = 2^{\aleph_0}$ by establishing:
-1. $|\mathbb{R}| \leq 2^{\aleph_0}$
-2. $2^{\aleph_0} \leq |\mathbb{R}|$
+We will prove $\|\mathbb{R}\| = 2^{\aleph_0}$ by establishing:
+1. $\|\mathbb{R}\| \leq 2^{\aleph_0}$
+2. $2^{\aleph_0} \leq \|\mathbb{R}\|$
 
-Then by the Cantor-Schröder-Bernstein Theorem, we conclude $|\mathbb{R}| = 2^{\aleph_0}$.
+Then by the Cantor-Schröder-Bernstein Theorem, we conclude $\|\mathbb{R}\| = 2^{\aleph_0}$.
 
 ---
 
-## Part 1: Proving $|\mathbb{R}| \leq 2^{\aleph_0}$
+## Part 1: Proving $\|\mathbb{R}\| \leq 2^{\aleph_0}$
 
 ### Reduction to the Unit Interval
 
-**Lemma 1.** $|\mathbb{R}| = |(0,1)|$.
+**Lemma 1.** $\|\mathbb{R}\| = \|(0,1)\|$.
 
 *Proof.* Define $f: (0,1) \to \mathbb{R}$ by
 
 $$f(x) = \tan\left(\pi\left(x - \frac{1}{2}\right)\right)$$
 
-This function is continuous and strictly increasing on $(0,1)$. As $x \to 0^+$, we have $f(x) \to -\infty$, and as $x \to 1^-$, we have $f(x) \to +\infty$. Therefore, $f$ is a bijection from $(0,1)$ to $\mathbb{R}$, establishing $|\mathbb{R}| = |(0,1)|$. ∎
+This function is continuous and strictly increasing on $(0,1)$. As $x \to 0^+$, we have $f(x) \to -\infty$, and as $x \to 1^-$, we have $f(x) \to +\infty$. Therefore, $f$ is a bijection from $(0,1)$ to $\mathbb{R}$, establishing $\|\mathbb{R}\| = \|(0,1)\|$. ∎
 
-By Lemma 1, it suffices to construct an injection from $(0,1)$ into $\{0,1\}^{\mathbb{N}}$.
+By Lemma 1, it suffices to construct an injection from $(0,1)$ into $\\{0,1\\}^{\mathbb{N}}$.
 
 ### Binary Expansions
 
@@ -105,11 +105,11 @@ The canonical choice selects expansion (1), which is unique. ∎
 
 ### Construction of the Injection
 
-**Theorem 2.** $|\mathbb{R}| \leq 2^{\aleph_0}$.
+**Theorem 2.** $\|\mathbb{R}\| \leq 2^{\aleph_0}$.
 
-*Proof.* By Lemma 1, it suffices to show $|(0,1)| \leq |\{0,1\}^{\mathbb{N}}|$.
+*Proof.* By Lemma 1, it suffices to show $\|(0,1)\| \leq \|\\{0,1\\}^{\mathbb{N}}\|$.
 
-Define $\varphi: (0,1) \to \{0,1\}^{\mathbb{N}}$ as follows: for each $x \in (0,1)$, let $\varphi(x) = (a_1, a_2, a_3, \ldots)$ where
+Define $\varphi: (0,1) \to \\{0,1\\}^{\mathbb{N}}$ as follows: for each $x \in (0,1)$, let $\varphi(x) = (a_1, a_2, a_3, \ldots)$ where
 
 $$0.a_1a_2a_3\ldots$$
 
@@ -123,29 +123,29 @@ is the canonical binary expansion of $x$ (as in Definition 4).
 
 *Proof of Claim 2.* Suppose $\varphi(x) = \varphi(y)$ for some $x, y \in (0,1)$. This means that $x$ and $y$ have the same canonical binary expansion. Since each number is uniquely determined by its canonical binary expansion (by the definition of the expansion as a convergent series), we have $x = y$. ∎
 
-Therefore, $\varphi$ is an injection from $(0,1)$ to $\{0,1\}^{\mathbb{N}}$, establishing $|(0,1)| \leq |\{0,1\}^{\mathbb{N}}| = 2^{\aleph_0}$.
+Therefore, $\varphi$ is an injection from $(0,1)$ to $\\{0,1\\}^{\mathbb{N}}$, establishing $\|(0,1)\| \leq \|\\{0,1\\}^{\mathbb{N}}\| = 2^{\aleph_0}$.
 
-Combined with Lemma 1, we conclude $|\mathbb{R}| \leq 2^{\aleph_0}$. ∎
+Combined with Lemma 1, we conclude $\|\mathbb{R}\| \leq 2^{\aleph_0}$. ∎
 
 ---
 
-## Part 2: Proving $2^{\aleph_0} \leq |\mathbb{R}|$
+## Part 2: Proving $2^{\aleph_0} \leq \|\mathbb{R}\|$
 
 ### Ternary Expansions
 
 We now construct an injection from $\{0,1\}^{\mathbb{N}}$ into $\mathbb{R}$ using ternary (base-3) expansions with a restricted digit set.
 
-**Theorem 3.** $2^{\aleph_0} \leq |\mathbb{R}|$.
+**Theorem 3.** $2^{\aleph_0} \leq \|\mathbb{R}\|$.
 
-*Proof.* We construct an injection $\psi: \{0,1\}^{\mathbb{N}} \to \mathbb{R}$.
+*Proof.* We construct an injection $\psi: \\{0,1\\}^{\mathbb{N}} \to \mathbb{R}$.
 
-For each sequence $(a_1, a_2, a_3, \ldots) \in \{0,1\}^{\mathbb{N}}$, define
+For each sequence $(a_1, a_2, a_3, \ldots) \in \\{0,1\\}^{\mathbb{N}}$, define
 
 $$\psi\big((a_n)_{n=1}^{\infty}\big) = \sum_{n=1}^{\infty} \frac{2a_n}{3^n}$$
 
 **Claim 3.** $\psi$ maps into $[0,1] \subset \mathbb{R}$.
 
-*Proof of Claim 3.* For any sequence $(a_n) \in \{0,1\}^{\mathbb{N}}$, each term satisfies $0 \leq 2a_n \leq 2$, so
+*Proof of Claim 3.* For any sequence $(a_n) \in \\{0,1\\}^{\mathbb{N}}$, each term satisfies $0 \leq 2a_n \leq 2$, so
 
 $$0 \leq \frac{2a_n}{3^n} \leq \frac{2}{3^n}$$
 
@@ -153,11 +153,11 @@ Therefore,
 
 $$0 \leq \sum_{n=1}^{\infty} \frac{2a_n}{3^n} \leq \sum_{n=1}^{\infty} \frac{2}{3^n} = 2 \cdot \frac{1/3}{1 - 1/3} = 2 \cdot \frac{1}{2} = 1$$
 
-Thus, $\psi\big((a_n)\big) \in [0,1] \subset \mathbb{R}$ for all $(a_n) \in \{0,1\}^{\mathbb{N}}$. ∎
+Thus, $\psi\big((a_n)\big) \in [0,1] \subset \mathbb{R}$ for all $(a_n) \in \\{0,1\\}^{\mathbb{N}}$. ∎
 
 **Claim 4.** $\psi$ is injective.
 
-*Proof of Claim 4.* Suppose $\psi\big((a_n)\big) = \psi\big((b_n)\big)$ for sequences $(a_n), (b_n) \in \{0,1\}^{\mathbb{N}}$. Then
+*Proof of Claim 4.* Suppose $\psi\big((a_n)\big) = \psi\big((b_n)\big)$ for sequences $(a_n), (b_n) \in \\{0,1\\}^{\mathbb{N}}$. Then
 
 $$\sum_{n=1}^{\infty} \frac{2a_n}{3^n} = \sum_{n=1}^{\infty} \frac{2b_n}{3^n}$$
 
@@ -175,7 +175,7 @@ This gives
 
 $$\sum_{k=2}^{\infty} \frac{2(a_k - b_k)}{3^k} = -\frac{2}{3}$$
 
-However, since $a_k, b_k \in \{0,1\}$, we have $|a_k - b_k| \leq 1$ for all $k$. Therefore,
+However, since $a_k, b_k \in \\{0,1\\}$, we have $\|a_k - b_k\| \leq 1$ for all $k$. Therefore,
 
 $$\left|\sum_{k=2}^{\infty} \frac{2(a_k - b_k)}{3^k}\right| \leq \sum_{k=2}^{\infty} \frac{2}{3^k} = \frac{2 \cdot (1/9)}{1 - 1/3} = \frac{2/9}{2/3} = \frac{1}{3}$$
 
@@ -207,23 +207,23 @@ But $\frac{1}{3^n} < \frac{2}{3^n}$, which is a contradiction. Therefore, $a_n =
 
 By strong induction, $a_n = b_n$ for all $n \in \mathbb{N}$, which means $(a_n) = (b_n)$. ∎
 
-Therefore, $\psi$ is an injection from $\{0,1\}^{\mathbb{N}}$ to $\mathbb{R}$, establishing $|\{0,1\}^{\mathbb{N}}| \leq |\mathbb{R}|$, i.e., $2^{\aleph_0} \leq |\mathbb{R}|$. ∎
+Therefore, $\psi$ is an injection from $\\{0,1\\}^{\mathbb{N}}$ to $\mathbb{R}$, establishing $\|\\{0,1\\}^{\mathbb{N}}\| \leq \|\mathbb{R}\|$, i.e., $2^{\aleph_0} \leq \|\mathbb{R}\|$. ∎
 
-**Remark.** The key insight in this construction is that we use ternary expansions with only the digits 0 and 2. This avoids the non-uniqueness problem that arises with binary or decimal expansions. In ternary, the only numbers with two expansions are those of the form $\frac{k}{3^m}$ where the two expansions use different sets of digits (e.g., one ending in 2's, the other ending in 1's followed by 0's). By restricting to digits $\{0, 2\}$ only, no number in our range $[0,1]$ has two such expansions.
+**Remark.** The key insight in this construction is that we use ternary expansions with only the digits 0 and 2. This avoids the non-uniqueness problem that arises with binary or decimal expansions. In ternary, the only numbers with two expansions are those of the form $\frac{k}{3^m}$ where the two expansions use different sets of digits (e.g., one ending in 2's, the other ending in 1's followed by 0's). By restricting to digits $\\{0, 2\\}$ only, no number in our range $[0,1]$ has two such expansions.
 
 ---
 
 ## Main Theorem
 
-**Theorem 4 (Main Result).** $|\mathbb{R}| = 2^{\aleph_0}$.
+**Theorem 4 (Main Result).** $\|\mathbb{R}\| = 2^{\aleph_0}$.
 
-*Proof.* By Theorem 2, we have $|\mathbb{R}| \leq 2^{\aleph_0}$.
+*Proof.* By Theorem 2, we have $\|\mathbb{R}\| \leq 2^{\aleph_0}$.
 
-By Theorem 3, we have $2^{\aleph_0} \leq |\mathbb{R}|$.
+By Theorem 3, we have $2^{\aleph_0} \leq \|\mathbb{R}\|$.
 
 Therefore, by the Cantor-Schröder-Bernstein Theorem (Theorem 1), we conclude
 
-$$|\mathbb{R}| = 2^{\aleph_0}$$
+$\|\mathbb{R}\| = 2^{\aleph_0}$
 
 ∎
 
@@ -231,6 +231,6 @@ $$|\mathbb{R}| = 2^{\aleph_0}$$
 
 ## Concluding Remarks
 
-This proof is entirely constructive and does not appeal to the Continuum Hypothesis. The equality $|\mathbb{R}| = 2^{\aleph_0}$ is a theorem of ZFC set theory.
+This proof is entirely constructive and does not appeal to the Continuum Hypothesis. The equality $\|\mathbb{R}\| = 2^{\aleph_0}$ is a theorem of ZFC set theory.
 
 The question of whether $2^{\aleph_0} = \aleph_1$ (where $\aleph_1$ is the smallest uncountable cardinal) is the famous Continuum Hypothesis, which was shown by Gödel and Cohen to be independent of ZFC. That is, neither the Continuum Hypothesis nor its negation can be proved from the standard axioms of set theory.
