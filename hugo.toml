@@ -7,7 +7,6 @@ theme = "PaperMod"
   defaultTheme = "dark"
   disableThemeToggle = true
   customCSS = ["css/custom.css"]
-  googleAnalytics = ""
   ShowReadingTime = true
   ShowShareButtons = false
   ShowPostNavLinks = true
