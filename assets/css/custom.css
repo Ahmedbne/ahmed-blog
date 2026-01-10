@@ -1,0 +1,401 @@
+/* ═══════════════════════════════════════════════════════════════
+   AHMED'S NOTES - Custom Theme
+   A refined aesthetic for Mathematics, Philosophy & Finance
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Root Variables ─── */
+:root {
+  --accent-gold: #c9a227;
+  --accent-gold-dim: #8b7355;
+  --accent-blue: #4a90a4;
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-card: #161616;
+  --text-primary: #e8e6e3;
+  --text-secondary: #9a9a9a;
+  --text-muted: #666666;
+  --border-subtle: #222222;
+  --border-accent: #333333;
+}
+
+/* ─── Base Styles ─── */
+body {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  font-family: 'Crimson Pro', 'Georgia', serif !important;
+  font-size: 18px;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+/* ─── Typography ─── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', 'Georgia', serif !important;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+}
+
+.post-title, .entry-header h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Header & Navigation ─── */
+.header {
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%) !important;
+  border-bottom: 1px solid var(--border-subtle);
+  backdrop-filter: blur(10px);
+}
+
+.logo a {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1.6rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.1em;
+  color: var(--text-primary) !important;
+  text-transform: uppercase;
+}
+
+.logo a::before {
+  content: "∴ ";
+  color: var(--accent-gold);
+  font-size: 1.2rem;
+}
+
+#menu a {
+  font-family: 'Crimson Pro', serif !important;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary) !important;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+#menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--accent-gold);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+}
+
+#menu a:hover {
+  color: var(--accent-gold) !important;
+}
+
+#menu a:hover::after {
+  width: 80%;
+}
+
+/* ─── Home Info Section ─── */
+.first-entry {
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 8px;
+  padding: 3rem !important;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.first-entry::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-blue), var(--accent-gold));
+}
+
+.home-info .entry-content {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* ─── Post List ─── */
+.post-entry {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.post-entry::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent-gold);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.post-entry:hover {
+  border-color: var(--accent-gold-dim) !important;
+  transform: translateX(4px);
+  box-shadow: -4px 0 20px rgba(201, 162, 39, 0.1);
+}
+
+.post-entry:hover::before {
+  opacity: 1;
+}
+
+.post-entry .entry-title {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.post-entry .entry-hint {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ─── Single Post Content ─── */
+.post-content {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--text-primary);
+}
+
+.post-content p {
+  margin-bottom: 1.5em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.post-content blockquote {
+  border-left: 3px solid var(--accent-gold);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 0 6px 6px 0;
+}
+
+.post-content blockquote::before {
+  content: '"';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  color: var(--accent-gold);
+  opacity: 0.3;
+  position: absolute;
+  margin-left: -0.5rem;
+  margin-top: -1rem;
+}
+
+/* ─── Math/KaTeX Styling ─── */
+.katex-display {
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(201, 162, 39, 0.05) 100%);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  margin: 2rem 0;
+  overflow-x: auto;
+  position: relative;
+}
+
+.katex-display::before {
+  content: '∫';
+  position: absolute;
+  top: 0.5rem;
+  right: 0.8rem;
+  font-size: 1.2rem;
+  color: var(--accent-gold);
+  opacity: 0.3;
+}
+
+.katex {
+  font-size: 1.1em !important;
+  color: var(--text-primary);
+}
+
+/* ─── Code Blocks ─── */
+.post-content code {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.9em;
+  background: var(--bg-card);
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+  color: var(--accent-blue);
+}
+
+.post-content pre {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.post-content pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* ─── Links ─── */
+.post-content a {
+  color: var(--accent-gold);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.post-content a:hover {
+  border-bottom-color: var(--accent-gold);
+}
+
+/* ─── Footer ─── */
+.footer {
+  background: var(--bg-secondary) !important;
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding: 2rem 0;
+}
+
+.footer::before {
+  content: '— ∞ —';
+  display: block;
+  text-align: center;
+  color: var(--accent-gold);
+  opacity: 0.5;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5em;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold-dim);
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: var(--accent-gold);
+  color: var(--bg-primary);
+}
+
+/* ─── Breadcrumbs ─── */
+.breadcrumbs {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.breadcrumbs a {
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.breadcrumbs a:hover {
+  color: var(--accent-gold);
+}
+
+/* ─── Tags ─── */
+.post-tags a {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.post-tags a:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+/* ─── Page Header (Section Titles) ─── */
+.page-header h1 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.page-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-gold), transparent);
+}
+
+/* ─── Smooth Animations ─── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.main {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* ─── Responsive Adjustments ─── */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  
+  .post-title, .entry-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .first-entry {
+    padding: 1.5rem !important;
+  }
+  
+  #menu a {
+    padding: 0.5rem;
+  }
+}

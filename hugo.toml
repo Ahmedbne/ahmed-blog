@@ -1,0 +1,75 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Ahmed's Notes"
+theme = "PaperMod"
+
+[params]
+  defaultTheme = "dark"
+  disableThemeToggle = true
+  customCSS = ["css/custom.css"]
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = false
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = true
+  tocopen = false
+  description = "Notes on Mathematics, Philosophy & Finance"
+
+# Enable math globally
+[params.math]
+  enable = true
+  mathEngine = "katex"
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[params.assets]
+  disableHLJS = true
+
+[params.homeInfoParams]
+  Title = "∴ Ahmed"
+  Content = """
+  _Exploring the intersections of_ **Mathematics**, **Philosophy** _and_ **Finance**.
+  
+  A personal collection of notes, reflections, and intellectual wanderings.
+  """
+
+[params.label]
+  text = "Ahmed"
+  icon = ""
+  iconHeight = 35
+
+[menu]
+
+  [[menu.main]]
+    identifier = "math"
+    name = "Mathematics"
+    url = "/math/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "philosophy"
+    name = "Philosophy"
+    url = "/philosophy/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "finance"
+    name = "Finance & Economics"
+    url = "/finance/"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "journey"
+    name = "Journey"
+    url = "/professional-journey/"
+    weight = 4
