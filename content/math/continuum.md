@@ -5,7 +5,7 @@ title = 'The Cardinality of the Continuum Equals the Cardinality of the Power Se
 math = true
 +++
 
-We prove rigorously that the cardinality of the real numbers equals $2^{\aleph_0}$, the cardinality of the power set of the natural numbers. This proof uses only standard results from set theory and analysis.
+We prove that the cardinality of the real numbers equals $2^{\aleph_0}$, the cardinality of the power set of the natural numbers. This proof uses only standard results from set theory and analysis.
 
 ## Preliminary Definitions and Results
 
