@@ -241,7 +241,7 @@ description = 'Passionate about finance and randomness, about that subtle dialog
 
 ## ∴ Who I Am
 
-I'm **Ahmed** — an applied mathematics student based in Casablanca, Morocco. My work lives at the intersection of **mathematics**, **economics/finance**, and **computational methods**. I'm drawn to problems where rigorous thinking meets real-world uncertainty: pricing derivatives, modeling risk, understanding how markets breathe.
+I'm **Ahmed** — an applied mathematics student based in Morocco. My work lives at the intersection of **mathematics**, **economics/finance**, and **computational methods**. I'm drawn to problems where rigorous thinking meets real-world uncertainty: pricing derivatives, modeling risk, understanding how markets breathe.
 
 ---
 
