@@ -417,8 +417,6 @@ Built a mathematical framework connecting stochastic processes to credit default
 
 ## ∴ What's Next
 
-I'm currently in my **professional gap year**, seeking a second six-month internship to deepen my expertise in quantitative finance — whether in derivatives pricing, risk management, or systematic strategies. I want to be where mathematics meets markets, where models meet reality.
-
 If you're working on interesting problems in this space, I'd love to connect.
 
 <div class="contact-section">
