@@ -73,7 +73,7 @@ $$\text{Equity } (E) = A - D$$
 
 Define the leverage ratio: $ L = \frac{A}{E} $ 
 
-Leverage $L$ tells you how many dollars of assets the bank holds per dollar of equity. If $L=25$, the bank has \$25 of assets for every \$1 of equity.
+Leverage $L$ tells you how many dollars of assets the bank holds per dollar of equity. If $L=25$, the bank has 25 dollars of assets for every 1 dollar of equity.
 
 Now look at what happens when asset values change. Since $E=A-D$, and debt $D$ is often sticky in the short run, a small drop in $A$ can be a huge percentage drop in $E$:
 
@@ -95,6 +95,7 @@ $$\text{Expected Loss} = PD \times LGD \times EAD$$
 If underwriting weakens, $PD$ rises. If house prices fall, recoveries fall and $LGD$ rises. In 2008, both moved in the wrong direction at the same time.
 
 How an MBS "waterfall" works: why senior tranches looked safe, until they weren't
+
 Imagine a pool of $N$ mortgages. Let total cash flow from borrowers at time $t$ be:
 
 $$C_t = \sum_{i=1}^{N} \big(\mathrm{interest}_{i,t} + \mathrm{principal}_{i,t}\big) - \mathrm{losses}_t$$
