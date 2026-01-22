@@ -65,13 +65,13 @@ We are now looking inside the bank’s financial body to see the hidden fragilit
 
 Consider a simplified bank balance sheet:
 
-$$\text{Assets } (A) = \text{Loans} + \text{Securities} \\$$
-$$\text{Liabilities } (D) = \text{Short-term funding} + \text{Long-term debt} \\$$
-$$\text{Equity } (E) = A - D$$
+$$Assets (A) = Loans + Securities \\$$
+$$Liabilities (D) = Short-term funding + Long-term debt \\$$
+$$Equity (E) = A - D$$
 
-Define the leverage ratio: $ L = frac{A}{E} $ 
+Define the leverage ratio: $ L = \frac{A}{E} $ 
 
-Leverage $L$ tells you how many dollars of assets the bank holds per dollar of equity. If $L=25$, the bank has $25 of assets for every $1 of equity.
+Leverage $L$ tells you how many dollars of assets the bank holds per dollar of equity. If $L=25$, the bank has \$25 of assets for every \$1 of equity.
 
 Now look at what happens when asset values change. Since $E=A-D$, and debt $D$ is often sticky in the short run, a small drop in $A$ can be a huge percentage drop in $E$:
 
@@ -95,7 +95,7 @@ If underwriting weakens, $PD$ rises. If house prices fall, recoveries fall and $
 How an MBS "waterfall" works: why senior tranches looked safe, until they weren't
 Imagine a pool of $N$ mortgages. Let total cash flow from borrowers at time $t$ be:
 
-$$C_t = \sum_{i=1}^{N} \big(\text{interest}_{i,t} + \text{principal}_{i,t}\big) - \text{losses}_t$$
+$$C_t = \sum_{i=1}^{N} \big(\mathrm{interest}_{i,t} + \mathrm{principal}_{i,t}\big) - \mathrm{losses}_t$$
 
 The pool receives interest and principal payments from homeowners; defaults reduce what arrives.
 
@@ -103,11 +103,11 @@ Now split the security into tranches: Senior (S), Mezzanine (M), Equity (E). Los
 
 A stylized loss allocation at time $t$ might look like:
 
-$$\text{Loss}_E(t) = \min(\text{Loss}(t),\,K_E)$$
+$$\text{Loss}_E(t) = \min(\text{Loss}(t)\,K_E)$$
 
-$$\text{Loss}_M(t) = \min\big(\max(\text{Loss}(t)-K_E,\,0),\,K_M\big)$$
+$$\text{Loss}_M(t) = \min\big(\max(\text{Loss}(t)-K_E\,0)\,K_M\big)$$
 
-$$\text{Loss}_S(t) = \max(\text{Loss}(t)-K_E-K_M,\,0)$$
+$$\text{Loss}_S(t) = \max(\text{Loss}(t)-K_E-K_M\,0)$$
 
 Equity absorbs losses up to its thickness $K_E$. If losses exceed that, mezzanine absorbs the next layer $K_M$. Only when losses pierce both cushions does the senior tranche take losses.
 
