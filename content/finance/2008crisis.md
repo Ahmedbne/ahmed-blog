@@ -7,14 +7,16 @@ math = true
 
 The 2008 global financial crisis was not “just” a housing bust, nor merely a story of greedy bankers or inattentive regulators. It was a systems failure, a modern credit machine built to look safe in good weather, then revealed to be structurally fragile the moment the climate changed. A long housing boom supplied the fuel; a sprawling securitization pipeline turned local mortgages into global “safe assets”; leverage and short-term funding provided the acceleration; and a set of widely used risk models, especially those underestimating correlated defaults and liquidity risk, helped financial institutions convince themselves that speed was stability. When U.S. house prices stopped rising and mortgage defaults climbed, losses appeared first in the riskiest corners of structured finance, then migrated, through balance sheets, collateral calls, funding markets, and panic, into the core of the global banking system. The result was a sudden stop in credit, a collapse in trade, deep recessions, and a decade-long afterlife of political and institutional change.
 
-### Keywords
+***Keywords***
 
 Housing bubble; subprime; securitization; MBS; CDO; CDS; leverage; repo; shadow banking; VaR; correlation; contagion; liquidity freeze; Great Recession.
 
 ### 1- Why 2008 matters
 
 A healthy financial system does two essential things: **moves savings to productive investment**, and **redistributes risk** from those who can’t bear it to those who can. The trouble is that the same engineering that makes finance efficient also makes it opaque. By the early 2000s, the system had become exceptionally good at slicing, repackaging, and exporting risk, often so effectively that nobody could easily say where the risk finally lived.
+
 For roughly two decades before 2008, many advanced economies experienced relatively stable inflation and fewer severe recessions. This stability encouraged the belief that macroeconomic shocks were tamer and that modern policy tools (especially central banking) could contain crises. In finance, stability has a paradoxical side-effect: it **encourages leverage** because past calm is mistaken for future safety.
+
 Traditional banking is simple to describe: take deposits, make loans, hold capital and liquidity buffers, and accept tight regulation. By 2008, a large share of credit creation had migrated into a parallel universe often called **shadow banking**: broker-dealers, structured investment vehicles (SIVs), money market funds, and securitization conduits that performed bank-like maturity transformation (borrowing short, lending long) without traditional bank safeguards. When confidence is high, shadow banking feels like a miracle of efficiency. When confidence breaks, it can run like a bank, only faster.
 
 ### 2- Root causes: the ingredients that made the crisis possible
@@ -23,25 +25,33 @@ The crisis begins with a mundane asset: the single-family home. U.S. home prices
 - Rising prices make lenders feel safer (collateral seems abundant).
 - Easier credit increases demand.
 - Higher demand pushes prices up again.
+
 Once this loop is socially accepted, underwriting standards tend to loosen because recent performance looks like proof of structural safety.
 
 Now, let's talk about **Subprime Mortgages**.
+
 A subprime mortgage is a loan to a borrower with weaker credit characteristics (lower credit scores, patchier income history, higher existing debt). Subprime lending isn’t inherently evil. The problem in the 2000s was the combination of:
 - Aggressive product design (teaser rates, adjustable-rate mortgages that reset upward),
 - Weak verification (“low-doc” or “no-doc” loans),
 - High loan-to-value ratios (thin borrower equity), and
 - A business model that rewarded loan volume more than loan quality.
+
 Think of it like a restaurant that gets paid for serving plates, not for whether customers get food poisoning next week.
+
 Next, here it comes the idea of **Securitization**, turning mortgages into “safe” global assets.
 Securitization is the process of pooling loans and selling claims on the pool’s cash flows. The simplest form is a mortgage-backed security (MBS). A more complex layer is a collateralized debt obligation (CDO), often built from slices of many MBS deals.
+
 The crucial innovation was **tranching**, splitting a pool’s cash flows into layers with different priorities. The top layer (senior tranche) gets paid first and is designed to be very safe; the bottom layer (equity tranche) absorbs losses first and is risky.
+
 The narrative pitch was elegant: “If we pool thousands of mortgages across the country, diversify idiosyncratic risk, and structure payments carefully, we can manufacture lots of highly rated bonds.” The Financial Crisis Inquiry Commission (FCIC) later emphasized how these products, combined with failures in governance and oversight, amplified vulnerability.
 
 BUT, when everyone is rational locally and disastrous globally.
 A recurring pattern in crises is agency problems: the person making the decision doesn’t bear the full consequence. Mortgage brokers earned fees for origination, not long-term repayment. Then, banks earned fees for packaging and selling securities. Then, rating agencies were paid by issuers whose deals they rated. And last but not least, traders and executives were rewarded for short-run return on equity, which rises mechanically with leverage (until it doesn’t).
+
 Nobody needed to wake up and choose chaos. It was enough that the system paid generously for producing assets that looked safe.
 
 We finally reached the **Leverage** idea, the multiplier that turns a loss into a catastrophe.
+
 Leverage is borrowing to amplify returns. It’s also borrowing to amplify fragility. We’ll formalize this in the next section, but the intuition is immediate:
 - A homeowner with a small down payment is leveraged.
 - A bank funding long-term assets with short-term borrowing is leveraged.
@@ -55,15 +65,14 @@ We are now looking inside the bank’s financial body to see the hidden fragilit
 
 Consider a simplified bank balance sheet:
 
-$$
-\text{Assets } (A) = \text{Loans} + \text{Securities} \\
-\text{Liabilities } (D) = \text{Short-term funding} + \text{Long-term debt} \\
-\text{Equity } (E) = A - D
-$$
+$$\text{Assets } (A) = \text{Loans} + \text{Securities} \\$$
+$$\text{Liabilities } (D) = \text{Short-term funding} + \text{Long-term debt} \\$$
+$$\text{Equity } (E) = A - D$$
 
 Define the leverage ratio: $ L = frac{A}{E} $ 
 
 Leverage $L$ tells you how many dollars of assets the bank holds per dollar of equity. If $L=25$, the bank has $25 of assets for every $1 of equity.
+
 Now look at what happens when asset values change. Since $E=A-D$, and debt $D$ is often sticky in the short run, a small drop in $A$ can be a huge percentage drop in $E$:
 
 $$\frac{\Delta E}{E} \approx L \cdot \frac{\Delta A}{A}$$
@@ -109,8 +118,12 @@ A common way to model correlated defaults is a one-factor model:
 $$Y_i = \sqrt{\rho}\,Z + \sqrt{1-\rho}\,\varepsilon_i$$
 
 Default occurs if: $Y_i < \Phi^{-1}(p)$
+
 Each borrower's "health" $Y_i$ depends partly on a shared economic factor $Z$ (think: housing market + jobs + credit conditions) and partly on idiosyncratic noise $\varepsilon_i$. The parameter $\rho$ measures how strongly everyone is tied to the same macro factor. If the common factor turns bad, many borrowers weaken together. $\Phi^{-1}(p)$ is just the threshold corresponding to default probability $p$ in a standard normal model.
-Here's the uncomfortable fact: **senior tranches are extremely sensitive to tail correlation**. Small underestimates of $\rho$ can turn "almost impossible" senior losses into "suddenly plausible" senior losses. Structured finance wasn't primarily wrong because math exists; it was wrong because the wrong math (and the wrong calibration regime) was treated as certainty.
+
+Here's the uncomfortable fact: **senior tranches are extremely sensitive to tail correlation**. 
+
+Small underestimates of $\rho$ can turn "almost impossible" senior losses into "suddenly plausible" senior losses. Structured finance wasn't primarily wrong because math exists; it was wrong because the wrong math (and the wrong calibration regime) was treated as certainty.
 
 Let's now look into **VaR and procyclicality**, when “risk management” amplifies risk.
 A basic VaR formulation for a portfolio with (approximate) normal returns is:
@@ -118,8 +131,11 @@ A basic VaR formulation for a portfolio with (approximate) normal returns is:
 $$VaR_{\alpha} \approx z_{\alpha}\,\sigma_P \sqrt{h}$$
 
 At confidence level $\alpha$, VaR is "a bad-day loss estimate." $z_{\alpha}$ is a quantile (bigger for 99% than for 95%), $\sigma_P$ is the portfolio's volatility, and $h$ is the horizon (e.g., 1 day).
+
 In a calm boom, $\sigma_P$ is low → VaR looks low → institutions can hold more risk for the same capital constraint. When volatility spikes, VaR jumps → institutions are forced to de-risk (sell assets) into falling markets.
+
 Basel market risk rules embedded VaR and backtesting into capital requirements, including penalty multipliers when models performed poorly.
+
 **Result:** when stress hits, constraints tighten precisely when everyone is least able to adjust smoothly. That's mechanical deleveraging, a core accelerant of 2008.
 
 In the repo market, you borrow cash against securities as collateral. If a security has market value $P$ and the haircut is $h$, the borrowing capacity is:
@@ -127,6 +143,7 @@ In the repo market, you borrow cash against securities as collateral. If a secur
 $$B = (1-h)\,P$$
 
 With a 2% haircut, you can borrow 98% of the collateral value; with a 20% haircut, you can borrow only 80%. If haircuts rise suddenly, your funding evaporates unless you post more collateral or sell assets.
+
 In 2008, haircuts and margin requirements rose rapidly, turning solvency fears into immediate funding crises, even for firms that might have survived in a slower-moving world.
 
 But how fire sales and feedback loops influenced the market, why prices overshoot on the way down?
@@ -135,15 +152,17 @@ A simple way to represent market impact is:
 $$p = p_0 - \lambda q$$
 
 The more quantity $q$ institutions try to sell, the more price $p$ falls below its pre-stress level $p_0$. The parameter $\lambda$ captures illiquidity.
+
 Combine this with leverage targeting and VaR constraints, and you get a vicious circle: price drops → equity shrinks → leverage rises → forced sales → further price drops.
 
-### From local housing trouble to global catastrophe: the cascade
+### 4- From local housing trouble to global catastrophe: the cascade
 
 By 2007, mortgage delinquencies rose and the market began repricing subprime risk. The ABX indices—benchmarks tied to subprime mortgage credit risk—collapsed, reflecting both worsening fundamentals and a sudden premium for illiquidity and fear.
 This was the moment the system could have treated structured-credit losses as painful-but-contained. Instead, opacity and leverage transformed repricing into panic.
 
 Bear Stearns was not brought down by a long, slow recognition of insolvency; it was brought down by a rapid loss of funding. The Federal Reserve describes how Bear informed regulators on March 13, 2008 that it expected it could not meet obligations the next day without support.
 The Fed and JPMorgan created Maiden Lane structures to facilitate the resolution.
+
 In other words, the system had already entered a phase where confidence, not just fundamental asset values, could decide whether an institution lived or died.
 
 Now comes the moment of truth. Lehman Brothers filed for bankruptcy on **September 15, 2008**, the iconic rupture that convinced markets no one was safely “inside the perimeter.”
@@ -152,6 +171,7 @@ Then came a crucial “plumbing” event: the **Reserve Primary Fund**, a money 
 
 During the worst phase, the spread between 3-month LIBOR and OIS (a proxy for bank funding stress and counterparty fear) spiked dramatically, peaking around 360 basis points in mid-October 2008 according to a Federal Reserve bulletin chart narrative.
 John Hull’s analysis similarly documents an October 2008 peak around the mid-300s.
+
 Banks didn’t trust other banks. When the institutions that provide short-term credit stop trusting each other, the entire economy starts running out of oxygen.
 
 But why it went global? This crisis spread internationally for three intertwined reasons:
@@ -159,7 +179,7 @@ But why it went global? This crisis spread internationally for three intertwined
 2- **Dollar funding dependence**. Non-U.S. banks often funded dollar assets in short-term dollar markets. When dollar liquidity vanished, the strain went worldwide.
 3- **Common risk models and correlated deleveraging**. Many institutions responded similarly—sell, de-risk, hoard liquidity—creating global synchronization in stress.
 
-### Consequences: short-term shocks and long-term structural changes
+### 5- Consequences: short-term shocks and long-term structural changes
 
 #### The macro shock: output, jobs, and trade
 The crisis produced the Great Recession. The Federal Reserve’s historical summary reports that U.S. real GDP fell **4.3%** from its peak in 2007Q4 to its trough in 2009Q2.
@@ -181,7 +201,7 @@ The post-crisis regulatory overhaul included the **Dodd–Frank Act**, signed Ju
 One of the most sobering findings in post-crisis research is that output losses after major financial crises can be persistent. An IMF working paper<sup>[\*](https://www.imf.org/-/media/files/publications/wp/2019/wpiea2019083.pdf)</sup> reviewing the decade after 2008 emphasizes the durability of output shortfalls and highlights sluggish investment as a key channel.
 A financial crisis can permanently bend the economy’s trajectory downward, not just produce a temporary dip.
 
-### Lessons learned
+### 6- Lessons learned
 
 *Leverage turns measurement error into existential risk*
 If a system runs at high leverage, it cannot tolerate being “a little wrong” about asset risk. The leverage equation is merciless: small asset declines can erase equity. The practical implication is not “ban leverage,” but design leverage to be robust to stress, with buffers that are meaningful in bad states, not just optimized for good ones.
