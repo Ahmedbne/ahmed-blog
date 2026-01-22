@@ -65,9 +65,11 @@ We are now looking inside the bank’s financial body to see the hidden fragilit
 
 Consider a simplified bank balance sheet:
 
-$$Assets (A) = Loans + Securities \\$$
-$$Liabilities (D) = Short-term funding + Long-term debt \\$$
-$$Equity (E) = A - D$$
+$$\text{Assets } (A) = \text{Loans} + \text{Securities}$$
+
+$$\text{Liabilities } (D) = \text{Short-term funding} + \text{Long-term debt}$$
+
+$$\text{Equity } (E) = A - D$$
 
 Define the leverage ratio: $ L = \frac{A}{E} $ 
 
