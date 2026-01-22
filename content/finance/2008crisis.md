@@ -98,7 +98,7 @@ How an MBS "waterfall" works: why senior tranches looked safe, until they weren'
 
 Imagine a pool of $N$ mortgages. Let total cash flow from borrowers at time $t$ be:
 
-$$C_t = \sum_{i=1}^{N} \big(\mathrm{interest}_{i,t} + \mathrm{principal}_{i,t}\big) - \mathrm{losses}_t$$
+$$C_t = \sum_{i=1}^{N} \left(\text{interest}_{i,t} + \text{principal}_{i,t}\right) - \text{losses}_t$$
 
 The pool receives interest and principal payments from homeowners; defaults reduce what arrives.
 
