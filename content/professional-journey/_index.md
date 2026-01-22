@@ -241,9 +241,7 @@ description = 'Passionate about finance and randomness, about that subtle dialog
 
 ## ∴ Who I Am
 
-I'm **Ahmed Bounadar** — a financial engineering student based in Casablanca, Morocco. My work lives at the intersection of **mathematics**, **economics**, and **computational methods**. I'm drawn to problems where rigorous thinking meets real-world uncertainty: pricing derivatives, modeling credit risk, understanding how markets breathe.
-
-This page is less a résumé and more a map of how I got here — the experiences that shaped my thinking, and the questions I'm still chasing.
+I'm **Ahmed** — an applied mathematics student based in Casablanca, Morocco. My work lives at the intersection of **mathematics**, **economics/finance**, and **computational methods**. I'm drawn to problems where rigorous thinking meets real-world uncertainty: pricing derivatives, modeling risk, understanding how markets breathe.
 
 ---
 
@@ -259,7 +257,7 @@ This page is less a résumé and more a map of how I got here — the experience
 <div class="timeline-title">Preparatory Classes (CPGE)</div>
 <div class="timeline-org">Mathematics & Physics Track · Kenitra</div>
 <div class="timeline-desc">
-Two years of intensive mathematical training — the French system's trial by fire. Analysis, algebra, probability, physics. This is where I learned that struggle is the texture of understanding. Every theorem earned, not given.
+Two years of intensive mathematical training — the French system's trial by fire. Analysis, algebra, probability, physics, philosophy, programming... 
 </div>
 <div class="timeline-tags">
 <span class="timeline-tag">Analysis</span>
@@ -275,7 +273,7 @@ Two years of intensive mathematical training — the French system's trial by fi
 <div class="timeline-title">Master of Engineering</div>
 <div class="timeline-org">École Centrale Casablanca · CentraleSupélec Group</div>
 <div class="timeline-desc">
-Data Science specialization, but my heart pulled toward finance. Courses in stochastic processes, optimization, time series, partial differential equations — the language of modern quantitative finance. Here I learned to see markets as dynamical systems, risk as a measurable quantity.
+Applied Math specialization, but my heart pulled toward finance. Courses in stochastic processes, optimization, time series, partial differential equations, ML/DL...
 </div>
 <div class="timeline-tags">
 <span class="timeline-tag">Stochastic Processes</span>
@@ -300,7 +298,7 @@ Data Science specialization, but my heart pulled toward finance. Courses in stoc
 <div class="timeline-title">Risk Quant Analyst</div>
 <div class="timeline-org">Attijariwafa Bank · Casablanca</div>
 <div class="timeline-desc">
-My first real encounter with operational risk. I built an <strong>Advanced Measurement Approach (AMA)</strong> framework — calibrating frequency-severity models (Poisson, Negative Binomial, Log-normal, Pareto), running Monte Carlo simulations, stress testing tail scenarios. The math became real when it touched capital requirements.
+My first real encounter with operational risk. I built an <strong>Advanced Measurement Approach (AMA)</strong> framework, calibrating frequency-severity models (Poisson, Negative Binomial, Log-normal, Pareto), running Monte Carlo simulations, stress testing tail scenarios.
 </div>
 <div class="timeline-tags">
 <span class="timeline-tag">Operational Risk</span>
@@ -314,10 +312,10 @@ My first real encounter with operational risk. I built an <strong>Advanced Measu
 <div class="timeline-item">
 <div class="timeline-content">
 <div class="timeline-date">May 2025 → Aug 2025</div>
-<div class="timeline-title">Quantitative Economist</div>
+<div class="timeline-title">Quantitative Trader</div>
 <div class="timeline-org">BMCE Capital · Bank of Africa</div>
 <div class="timeline-desc">
-Fixed income became my obsession. I built <strong>Nelson-Siegel yield curve models</strong>, bootstrapped discount curves, and applied VAR/VECM factor models to forecast term structure dynamics. The elegance of seeing level, slope, and curvature as tradeable factors — that changed how I see bond markets.
+Fixed income Trading specifically. I built <strong>Nelson-Siegel yield curve models</strong>, bootstrapped discount curves, and applied VAR/VECM factor models to forecast term structure dynamics. The importance of seeing level, slope, and curvature as tradeable factors, that changed how I see bond markets.
 </div>
 <div class="timeline-tags">
 <span class="timeline-tag">Yield Curves</span>
@@ -331,10 +329,10 @@ Fixed income became my obsession. I built <strong>Nelson-Siegel yield curve mode
 <div class="timeline-item">
 <div class="timeline-content">
 <div class="timeline-date">Sep 2025 → Present</div>
-<div class="timeline-title">Market Data Analyst</div>
+<div class="timeline-title">Market Data Analyst - Global Market</div>
 <div class="timeline-org">Société Générale · Corporate & Investment Banking</div>
 <div class="timeline-desc">
-Working at the intersection of data infrastructure and quantitative research. I develop and validate market time series — rates, indices, FX, commodities — ensuring the numbers that feed pricing models and structuring desks are clean, consistent, and trustworthy. Global coordination across US, Asia, and Europe taught me that markets never sleep.
+Working at the intersection of data infrastructure and quantitative research. I develop and validate market time series — Indices, ETFs  — ensuring the numbers that feed pricing models and structuring desks are clean, consistent, and trustworthy. Global coordination across US, Asia, and Europe taught me that markets never sleep.
 </div>
 <div class="timeline-tags">
 <span class="timeline-tag">Market Data</span>
@@ -359,7 +357,7 @@ Working at the intersection of data infrastructure and quantitative research. I 
 <div class="timeline-title">Pandemic Impact & Species Competition</div>
 <div class="timeline-org">Centrale Casablanca Research Center</div>
 <div class="timeline-desc">
-Generalized Lotka-Volterra models applied to pandemic dynamics. Simulations of inter-species competition, statistical analysis of emergent behaviors. A reminder that the mathematics of finance — systems, feedback, contagion — echoes everywhere.
+Generalized Lotka-Volterra models applied to pandemic dynamics. Simulations of inter-species competition, statistical analysis of emergent behaviors.
 </div>
 <div class="timeline-tags">
 <span class="timeline-tag">Dynamical Systems</span>
@@ -375,7 +373,7 @@ Generalized Lotka-Volterra models applied to pandemic dynamics. Simulations of i
 <div class="timeline-title">Credit Default Prediction</div>
 <div class="timeline-org">Centrale Casablanca</div>
 <div class="timeline-desc">
-Built a mathematical framework connecting stochastic processes to credit default. Modeled default probability as a random variable with time-dependent dynamics, studied convergence of estimators under noise, and linked ML methods (regression, random forests) to asymptotic statistics. Theory meeting practice.
+Built a mathematical framework connecting stochastic processes to credit default. Modeled default probability as a random variable with time-dependent dynamics, studied convergence of estimators under noise, and linked ML methods (regression, random forests) to asymptotic statistics.
 </div>
 <div class="timeline-tags">
 <span class="timeline-tag">Credit Risk</span>
@@ -395,7 +393,7 @@ Built a mathematical framework connecting stochastic processes to credit default
 
 <div class="skill-card">
 <h4>Languages</h4>
-<p>Python · C++ · R · SQL</p>
+<p>Python · C++ · R · SQL, Matlab</p>
 </div>
 
 <div class="skill-card">
@@ -405,7 +403,7 @@ Built a mathematical framework connecting stochastic processes to credit default
 
 <div class="skill-card">
 <h4>Libraries</h4>
-<p>Pandas · NumPy · Scikit-learn · Statsmodels · XGBoost</p>
+<p>Pandas · NumPy · Scikit-learn · Statsmodels · XGBoost...etc</p>
 </div>
 
 <div class="skill-card">
@@ -427,8 +425,7 @@ If you're working on interesting problems in this space, I'd love to connect.
 <h3>Let's Talk</h3>
 <div class="contact-links">
 <a href="mailto:ahmed.bounadar@centrale-casablanca.ma">📧 ahmed.bounadar@centrale-casablanca.ma</a>
-<a href="https://linkedin.com/in/ahmed-bounadar" target="_blank">💼 LinkedIn</a>
-<a href="tel:+212659839054">📱 +212 659 839 054</a>
+<a href="https://www.linkedin.com/in/ahmed-bounadar-4585221b4/" target="_blank">💼 LinkedIn</a>
 </div>
 </div>
 
