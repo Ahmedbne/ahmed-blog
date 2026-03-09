@@ -507,4 +507,118 @@ The mathematician in you, watching Federer lose a point with serene indifference
 
 *$M_5(p) = s^3(1+3t+6t^2)$ · $F'(\tfrac{1}{2}) \approx 13.5$ · $G'(\tfrac{1}{2}) = \tfrac{5}{2}$*
 
+{{< rawhtml >}}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+(function () {
+  var xs = [], xsmid = [];
+  for (var i = 0; i <= 300; i++) {
+    xs.push(0.01 + 0.98 * i / 300);
+    xsmid.push(0.30 + 0.40 * i / 300);
+  }
+
+  function D(p) {
+    var q = 1 - p;
+    return p * p / (p * p + q * q);
+  }
+
+  function G(p) {
+    var q = 1 - p, p2 = p*p, q2 = q*q, p4 = p2*p2, p5 = p4*p, q3 = q2*q;
+    return p4 * (1 + 4*q + 10*q2) + 20*p5*q3 / (p2 + q2);
+  }
+
+  function S(p) {
+    var g = G(p), r = 1 - g;
+    var g2=g*g, r2=r*r, g6=g2*g2*g2, g7=g6*g, r3=r2*r, r4=r2*r2, r5=r4*r;
+    return g6*(1 + 6*r + 21*r2 + 56*r3 + 126*r4) + 252*g7*r5/(g2+r2);
+  }
+
+  function M3(p) {
+    var s = S(p), t = 1 - s;
+    return s*s*(1 + 2*t);
+  }
+
+  function M5(p) {
+    var s = S(p), t = 1 - s;
+    return s*s*s*(1 + 3*t + 6*t*t);
+  }
+
+  function nd(f, x) { var h = 2e-4; return (f(x+h) - f(x-h)) / (2*h); }
+
+  function pts(arr, fn) {
+    return arr.map(function(x){ return {x: x, y: fn(x)}; });
+  }
+
+  var cGray  = '#aaaaaa';
+  var cTan   = '#a07848';
+  var cBlue  = '#2563eb';
+  var cGreen = '#16a34a';
+  var cPurp  = '#9333ea';
+  var cRed   = '#dc2626';
+
+  var scaleX = {
+    type: 'linear',
+    title: { display: true, text: 'Point win probability  p' },
+    grid: { color: 'rgba(0,0,0,.07)' }
+  };
+  var scaleY = { grid: { color: 'rgba(0,0,0,.07)' } };
+  var legend = { position: 'bottom', labels: { font: { size: 11 }, padding: 14 } };
+
+  function lineDS(label, arr, fn, color, dash) {
+    var ds = { label: label, data: pts(arr, fn), borderColor: color,
+               pointRadius: 0, borderWidth: 2 };
+    if (dash) ds.borderDash = [6, 4];
+    return ds;
+  }
+
+  function mkChart(id, datasets, yText, xOpts) {
+    var xScale = Object.assign({}, scaleX, xOpts || {});
+    new Chart(document.getElementById(id), {
+      type: 'line',
+      data: { datasets: datasets },
+      options: {
+        responsive: true,
+        animation: false,
+        plugins: { legend: legend, tooltip: { mode: 'index', intersect: false } },
+        scales: {
+          x: xScale,
+          y: Object.assign({}, scaleY, { title: { display: true, text: yText } })
+        }
+      }
+    });
+  }
+
+  // Figure 1 — D(p)
+  mkChart('chartDeuce', [
+    lineDS('y = p  (identity)',       xs, function(p){ return p; }, cGray, true),
+    lineDS('D(p) = p²/(p²+q²)',       xs, D,                       cTan)
+  ], 'Win probability from deuce,  D(p)');
+
+  // Figure 2 — Cascade
+  mkChart('chartCascade', [
+    lineDS('y = p',              xs, function(p){ return p; }, cGray, true),
+    lineDS('G(p) — game',        xs, G,                       cBlue),
+    lineDS('S(p) — set',         xs, S,                       cGreen),
+    lineDS('M₃(p) — best of 3',  xs, M3,                      cPurp),
+    lineDS('M₅(p) — best of 5',  xs, M5,                      cRed)
+  ], 'Win probability');
+
+  // Figure 3 — Derivatives
+  mkChart('chartDerivs', [
+    lineDS("G′(p)",   xsmid, function(p){ return nd(G,  p); }, cBlue),
+    lineDS("S′(p)",   xsmid, function(p){ return nd(S,  p); }, cGreen),
+    lineDS("M₅′(p)",  xsmid, function(p){ return nd(M5, p); }, cRed)
+  ], 'dF/dp  (amplification rate)', { min: 0.30, max: 0.70 });
+
+  // Figure 4 — Gap
+  mkChart('chartGap', [
+    lineDS('G(p) − p',  xs, function(p){ return G(p)  - p; }, cBlue),
+    lineDS('S(p) − p',  xs, function(p){ return S(p)  - p; }, cGreen),
+    lineDS('M₅(p) − p', xs, function(p){ return M5(p) - p; }, cRed)
+  ], 'F(p) − p  (amplification bonus)');
+
+})();
+</script>
+{{< /rawhtml >}}
+
 *On Markov Chains · Probability Amplification · Hierarchical Scoring · Stochastic Dominance*
