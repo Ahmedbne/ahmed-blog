@@ -32,7 +32,7 @@ math = true
 
 Roger Federer won approximately 80% of his professional tennis matches over a career spanning two decades. If you were there to watch him play, you would not find this surprising: his tennis appeared inevitable, governed by some law of physics that simply would not allow a lesser player to prevail. And yet there is a fact about his career that should, upon reflection, be deeply disturbing. Federer won only around 54% of all individual points he ever played. He lost 46 out of every 100. Nearly half. And this was one of the greatest sportsmen in human history.
 
-This essay exists to resolve that paradox completely. We will derive, from first principles, the exact function that maps a player's point-win probability to their match-win probability. We will prove that this function is superlinear, quantify precisely how superlinear, and explain in complete detail why the tennis scoring system is architecturally designed to produce exactly this behavior. Every claim will be stated as a theorem or proposition.
+This essay exists to resolve that paradox completely — not hand-wavingly, but with full mathematical rigor. We will derive, from first principles, the exact function that maps a player's point-win probability to their match-win probability. We will prove that this function is superlinear, quantify precisely how superlinear, and explain in complete detail why the tennis scoring system is architecturally designed to produce exactly this behavior. Every claim will be stated as a theorem or proposition. Every theorem will be proved.
 
 Along the way, we will encounter deuce recurrences, negative binomial distributions, Markov chain absorption probabilities, and a composed derivative that is roughly fourteen times larger than you would expect from a naive model. We will also encounter something genuinely surprising: the mathematical structure of tennis says something profound about the psychology of failure.
 
@@ -117,7 +117,14 @@ At $p = \tfrac{1}{2}$: $D'(\tfrac{1}{2}) = \frac{2 \cdot \tfrac{1}{4}}{(\tfrac{1
 
 (5) $D(1-p) = (1-p)^2/((1-p)^2+p^2) = q^2/(q^2+p^2) = 1 - p^2/(p^2+q^2) = 1-D(p)$. ✓ $\blacksquare$
 
-**Figure 1** — *The deuce win probability $D(p) = p^2/(p^2+q^2)$ plotted against the identity $y=p$. Notice how $D$ lies strictly above the diagonal for $p > \tfrac{1}{2}$, confirming Corollary 2.3(4): even from the reset state of deuce, a stronger player is amplified. The gap between $D(p)$ and $p$ represents the "deuce bonus" — the extra edge conferred by the rule's structure.*
+{{< rawhtml >}}
+<figure style="margin:2.5rem 0;background:#fffcf7;border:1px solid #c9bba4;border-radius:3px;padding:1.8rem 1.8rem 1.4rem;">
+  <canvas id="chartDeuce" height="200"></canvas>
+  <figcaption style="font-size:.82rem;color:#6a5d47;margin-top:1rem;padding-top:.6rem;border-top:1px solid #c9bba4;line-height:1.5;">
+    <strong style="font-family:monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#12100e;">Figure 1</strong> — The deuce win probability <em>D(p) = p²/(p²+q²)</em> plotted against the identity <em>y = p</em>. Notice how <em>D</em> lies strictly above the diagonal for <em>p > ½</em>, confirming Corollary 2.3(4): even from the reset state of deuce, a stronger player is amplified. The gap between <em>D(p)</em> and <em>p</em> represents the "deuce bonus" — the extra edge conferred by the rule's structure.
+  </figcaption>
+</figure>
+{{< /rawhtml >}}
 
 ---
 
@@ -318,9 +325,23 @@ The numbers are arresting. Consider the row $p = 0.54$: a player who wins 54 poi
 | Match (Best of 3) | 86.6% |
 | Match (Best of 5) | 91.9% |
 
-**Figure 2 — The Amplification Cascade.** *All four functions $G(p)$, $S(p)$, $M_3(p)$, $M_5(p)$ plotted against the point-win probability $p$, alongside the diagonal $y = p$ (dashed). Each higher-level function curves more dramatically away from the diagonal, bowing upward for $p > \tfrac{1}{2}$ and downward for $p < \tfrac{1}{2}$. Notice how near $p = \tfrac{1}{2}$, the slopes increase: $G$ is steeper than the diagonal, $S$ steeper than $G$, and $M_5$ steepest of all.*
+{{< rawhtml >}}
+<figure style="margin:2.5rem 0;background:#fffcf7;border:1px solid #c9bba4;border-radius:3px;padding:1.8rem 1.8rem 1.4rem;">
+  <canvas id="chartCascade" height="230"></canvas>
+  <figcaption style="font-size:.82rem;color:#6a5d47;margin-top:1rem;padding-top:.6rem;border-top:1px solid #c9bba4;line-height:1.5;">
+    <strong style="font-family:monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#12100e;">Figure 2 — The Amplification Cascade</strong> — All four functions <em>G(p)</em>, <em>S(p)</em>, <em>M&#8323;(p)</em>, <em>M&#8325;(p)</em> plotted against the point-win probability <em>p</em>, alongside the diagonal <em>y = p</em> (dashed). Each higher-level function curves more dramatically away from the diagonal, bowing upward for <em>p &gt; &#189;</em> and downward for <em>p &lt; &#189;</em>. Notice how near <em>p = &#189;</em>, the slopes increase: <em>G</em> is steeper than the diagonal, <em>S</em> steeper than <em>G</em>, and <em>M&#8325;</em> steepest of all.
+  </figcaption>
+</figure>
+{{< /rawhtml >}}
 
-**Figure 3 — Amplification Rates $dF/dp$.** *The derivative of each level-function with respect to $p$, plotted across the range $p \in (0.3, 0.7)$. All derivatives achieve their maximum near $p = \tfrac{1}{2}$, confirming that the amplification is strongest when opponents are closely matched — precisely when it matters most. The derivative of $M_5(p)$ at $p = \tfrac{1}{2}$ is approximately $13.5$: a 1-percentage-point increase in point ability translates to a ~13.5 percentage-point increase in five-set match win probability.*
+{{< rawhtml >}}
+<figure style="margin:2.5rem 0;background:#fffcf7;border:1px solid #c9bba4;border-radius:3px;padding:1.8rem 1.8rem 1.4rem;">
+  <canvas id="chartDerivs" height="200"></canvas>
+  <figcaption style="font-size:.82rem;color:#6a5d47;margin-top:1rem;padding-top:.6rem;border-top:1px solid #c9bba4;line-height:1.5;">
+    <strong style="font-family:monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#12100e;">Figure 3 — Amplification Rates dF/dp</strong> — The derivative of each level-function with respect to <em>p</em>, plotted across the range <em>p &#8712; (0.3, 0.7)</em>. All derivatives achieve their maximum near <em>p = &#189;</em>, confirming that the amplification is strongest when opponents are closely matched — precisely when it matters most. The derivative of <em>M&#8325;(p)</em> at <em>p = &#189;</em> is approximately 13.5: a 1-percentage-point increase in point ability translates to a ~13.5 percentage-point increase in five-set match win probability.
+  </figcaption>
+</figure>
+{{< /rawhtml >}}
 
 ---
 
@@ -426,7 +447,14 @@ Pre-deuce games ending at $4+k$ points contribute $(4+k)$ to the length. The pro
 > **Corollary 10.3 — Expected Match Length.**
 > For a best-of-five match with symmetric $p = 0.54$, the expected total number of points played can be computed by composing expectations at each level, giving approximately $260\text{–}280$ points. This matches the empirical average for Grand Slam matches of around 250–300 points.
 
-**Figure 4 — The "Amplification Gap" $F(p) - p$.** *For each level of the hierarchy, we plot $L(p) - p$ where $L \in \{G, S, M_5\}$. This is the "bonus" that the scoring structure grants to the better player at each level, over and above their raw ability. The bonus is zero at $p = \tfrac{1}{2}$ (neither player has an edge), grows steeply as $p$ increases, and peaks near $p \approx 0.65\text{–}0.70$ before returning to zero at $p=1$ (where the match-win probability is already 1). The $M_5$ curve reaches a maximum bonus of roughly $+0.42$ near $p \approx 0.66$: a player who wins 66% of points wins effectively all five-set matches.*
+{{< rawhtml >}}
+<figure style="margin:2.5rem 0;background:#fffcf7;border:1px solid #c9bba4;border-radius:3px;padding:1.8rem 1.8rem 1.4rem;">
+  <canvas id="chartGap" height="210"></canvas>
+  <figcaption style="font-size:.82rem;color:#6a5d47;margin-top:1rem;padding-top:.6rem;border-top:1px solid #c9bba4;line-height:1.5;">
+    <strong style="font-family:monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#12100e;">Figure 4 — The "Amplification Gap" F(p) &#8722; p</strong> — For each level of the hierarchy, we plot <em>L(p) &#8722; p</em> where <em>L &#8712; {G, S, M&#8325;}</em>. This is the "bonus" that the scoring structure grants to the better player at each level, over and above their raw ability. The bonus is zero at <em>p = &#189;</em> (neither player has an edge), grows steeply as <em>p</em> increases, and peaks near <em>p &#8776; 0.65–0.70</em> before returning to zero at <em>p = 1</em> (where the match-win probability is already 1). The <em>M&#8325;</em> curve reaches a maximum bonus of roughly +0.42 near <em>p &#8776; 0.66</em>: a player who wins 66% of points wins effectively all five-set matches.
+  </figcaption>
+</figure>
+{{< /rawhtml >}}
 
 ---
 
