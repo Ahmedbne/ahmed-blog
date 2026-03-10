@@ -32,7 +32,7 @@ math = true
 
 Roger Federer won approximately 80% of his professional tennis matches over a career spanning two decades. If you were there to watch him play, you would not find this surprising: his tennis appeared inevitable, governed by some law of physics that simply would not allow a lesser player to prevail. And yet there is a fact about his career that should, upon reflection, be deeply disturbing. Federer won only around 54% of all individual points he ever played. He lost 46 out of every 100. Nearly half. And this was one of the greatest sportsmen in human history.
 
-This essay exists to resolve that paradox completely — not hand-wavingly, but with full mathematical rigor. We will derive, from first principles, the exact function that maps a player's point-win probability to their match-win probability. We will prove that this function is superlinear, quantify precisely how superlinear, and explain in complete detail why the tennis scoring system is architecturally designed to produce exactly this behavior. Every claim will be stated as a theorem or proposition. Every theorem will be proved.
+This essay exists to clarify that paradox completely. We will derive, from first principles, the exact function that maps a player's point-win probability to their match-win probability. We will prove that this function is superlinear, quantify precisely how superlinear, and explain in complete detail why the tennis scoring system is architecturally designed to produce exactly this behavior. Every claim will be stated as a theorem or proposition.
 
 Along the way, we will encounter deuce recurrences, negative binomial distributions, Markov chain absorption probabilities, and a composed derivative that is roughly fourteen times larger than you would expect from a naive model. We will also encounter something genuinely surprising: the mathematical structure of tennis says something profound about the psychology of failure.
 
@@ -40,7 +40,7 @@ Along the way, we will encounter deuce recurrences, negative binomial distributi
 
 ## §1   The Model and Foundational Definitions {#s1}
 
-All mathematical investigation begins with a model — an abstraction that strips away irrelevant detail while preserving the structure we care about. The following definitions establish our framework with care, since every subsequent theorem rests upon them.
+All mathematical investigation begins with a model, an abstraction that strips away irrelevant detail while preserving the structure we care about. The following definitions establish our framework with care, since every subsequent theorem rests upon them.
 
 > **Definition 1.1 — The Point Process.**
 > We model a tennis match between players A and B as a sequence of independent Bernoulli trials. On each trial (each "point"), player A succeeds (wins the point) with probability $p \in (0,1)$, and player B succeeds with probability $q := 1 - p$. The value $p$ is called A's *point win probability* or *baseline ability parameter*.
