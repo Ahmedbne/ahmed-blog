@@ -5,7 +5,7 @@ title = 'The Mathematics of Improbable Dominance'
 math = true
 +++
 
-*A Rigorous Mathematical Essay*
+*A Mathematical Essay*
 
 **How a 4% statistical edge becomes total supremacy, and why tennis is the most mathematically exquisite game ever devised**
 
